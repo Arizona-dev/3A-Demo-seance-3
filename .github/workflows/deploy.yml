@@ -25,6 +25,7 @@ jobs:
           tags: ${{ secrets.DOCKER_USERNAME }}/mon-projet:latest
 
   test:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout du code
