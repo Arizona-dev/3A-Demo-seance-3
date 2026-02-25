@@ -20,6 +20,10 @@ app.get('/health', (req, res) => {
   res.json({ status: 'ok' });
 });
 
-app.listen(PORT, () => {
-  console.log(`App démarrée sur le port ${PORT}`);
-});
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`App démarrée sur le port ${PORT}`);
+  });
+}
+
+module.exports = app;
